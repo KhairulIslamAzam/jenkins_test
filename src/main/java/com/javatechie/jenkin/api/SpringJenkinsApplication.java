@@ -5,18 +5,21 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.logging.Logger;
+
 @SpringBootApplication
 @RestController
 public class SpringJenkinsApplication {
 
 
-	@GetMapping("/ping")
-	public String message() {
-		return "Wao!! Application Deployed successfully in SAP Cloud..";
-	}
+    @GetMapping("/ping")
+    public String message() {
+        return "Wao!! Application Deployed successfully in SAP Cloud..";
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringJenkinsApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringJenkinsApplication.class, args);
+        Logger.getAnonymousLogger().info("Application Deployed successfully in SAP Cloud...");
+    }
 
 }
